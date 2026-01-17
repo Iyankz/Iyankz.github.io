@@ -16,14 +16,9 @@ a:hover {
 }
 
 .hero {
-  padding: 60px 20px;
   text-align: center;
+  padding: 60px 20px;
   background: linear-gradient(180deg, #0d1117, #161b22);
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
 }
 
 .hero h1 span {
@@ -36,8 +31,8 @@ a:hover {
 }
 
 .tagline {
-  margin-top: 10px;
   font-style: italic;
+  color: #8b949e;
 }
 
 section {
@@ -48,21 +43,32 @@ section {
 
 h3 {
   border-bottom: 2px solid #30363d;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
 }
 
-.block {
-  margin-bottom: 25px;
+.hint {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+.repo {
+  margin: 18px 0;
+  padding-left: 10px;
+  border-left: 3px solid #30363d;
+}
+
+.repo h4 {
+  margin-bottom: 4px;
 }
 
 footer {
-  text-align: center;
-  padding: 30px 20px;
   border-top: 1px solid #30363d;
+  padding: 30px 20px;
+  text-align: center;
   color: #8b949e;
 }
 
-footer .motto {
+.motto {
   margin-top: 10px;
   color: #f85149;
   font-weight: bold;
