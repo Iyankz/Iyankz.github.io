@@ -4,113 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yayang Ardiansyah | ISP Systems Builder</title>
-  <link rel="stylesheet" href="assets/style.css" />
+
+  <!-- 🔐 Security Headers / CSP -->
+  <meta http-equiv="Content-Security-Policy"
+        content="
+        default-src 'self';
+        style-src 'self';
+        script-src 'self' https://plausible.io;
+        img-src 'self' data:;
+        connect-src 'self' https://plausible.io;
+        frame-ancestors 'none';
+        base-uri 'self';
+        form-action 'none';
+        ">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy"
+        content="geolocation=(), camera=(), microphone=()">
+
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/architecture.css">
+
+  <!-- 📊 Privacy-Friendly Analytics -->
+  <script defer data-domain="iyankz.github.io"
+          src="https://plausible.io/js/script.js"></script>
 </head>
+
 <body>
 
 <header class="hero">
   <h1>Yayang Ardiansyah <span>(Iyankz)</span></h1>
   <h2>Operations Manager · Network Architect · ISP Systems Builder</h2>
-  <p class="tagline">
-    Designing, operating, and scaling real-world ISP infrastructure.
-  </p>
+  <p class="tagline">Designing and operating real-world ISP infrastructure</p>
 </header>
 
 <section class="summary">
   <h3>Executive Summary</h3>
   <ul>
-    <li>Operations Manager managing <b>3 ISPs in Sukabumi</b></li>
+    <li>Managing <b>3 ISPs in Sukabumi</b></li>
     <li>ISP Consultant across Indonesia</li>
     <li>8+ years in ISP industry (Layer 1 → Management)</li>
     <li>Builder of production-grade ISP operational systems</li>
-    <li>Focus: Stability, Automation, Security, Compliance</li>
   </ul>
 </section>
 
-<section class="ecosystem">
-  <h3>ISP Operations Ecosystem</h3>
+<!-- 📐 INTERACTIVE ARCHITECTURE -->
+<section class="architecture">
+  <h3>ISP Architecture (Interactive)</h3>
+  <p class="hint">Hover or click each layer to explore</p>
 
-  <div class="block">
-    <h4>Core Logging & SIEM</h4>
-    <a href="https://github.com/Iyankz/LeuitLog">LeuitLog</a>
-    <p>Lightweight SIEM & Syslog Recorder for ISP & NOC environments.</p>
+  <div class="arch-stack">
+    <div class="layer" data-title="Users & Customers"
+         data-desc="End users accessing ISP services">
+      Users / Customers
+    </div>
+
+    <div class="layer" data-title="Network Devices"
+         data-desc="Routers, OLT, and switches">
+      MikroTik · OLT · Switch
+    </div>
+
+    <div class="layer clickable"
+         data-title="ISP Services"
+         data-desc="Customer-facing ISP services"
+         data-link="https://github.com/Iyankz">
+      GenieACS · Speedtest · Looking Glass
+    </div>
+
+    <div class="layer clickable"
+         data-title="Monitoring & NOC"
+         data-desc="Monitoring, alerting, and visibility"
+         data-link="https://github.com/Iyankz/CheckMK">
+      CheckMK · Smokeping · Pandora-FMS
+    </div>
+
+    <div class="layer clickable"
+         data-title="Security & Compliance"
+         data-desc="Firewall and DNS-based protection"
+         data-link="https://github.com/Iyankz/Firewall-MikroTik">
+      Firewall · RPZ · Trust-NG
+    </div>
+
+    <div class="layer highlight clickable"
+         data-title="Logging & SIEM (Core)"
+         data-desc="Centralized logging and incident analysis"
+         data-link="https://github.com/Iyankz/LeuitLog">
+      LeuitLog (SIEM)
+    </div>
   </div>
 
-  <div class="block">
-    <h4>Monitoring & NOC</h4>
-    <ul>
-      <li><a href="https://github.com/Iyankz/CheckMK">CheckMK</a></li>
-      <li><a href="https://github.com/Iyankz/Smokeping">Smokeping</a></li>
-      <li><a href="https://github.com/Iyankz/Pandora-FMS">Pandora-FMS</a></li>
-      <li><a href="https://github.com/Iyankz/SNMP-Linux">SNMP-Linux</a></li>
-      <li><a href="https://github.com/Iyankz/NTP-Server">NTP-Server</a></li>
-    </ul>
+  <div id="arch-info" class="arch-info">
+    <strong>Hover a layer</strong>
+    <p>Details will appear here.</p>
   </div>
-
-  <div class="block">
-    <h4>Network & Service Management</h4>
-    <ul>
-      <li><a href="https://github.com/Iyankz/GenieACS">GenieACS</a></li>
-      <li><a href="https://github.com/Iyankz/Netbox-Community">Netbox-Community</a></li>
-      <li><a href="https://github.com/Iyankz/IPAM">IPAM</a></li>
-      <li><a href="https://github.com/Iyankz/Oxidized">Oxidized</a></li>
-    </ul>
-  </div>
-
-  <div class="block">
-    <h4>Security & Compliance</h4>
-    <ul>
-      <li><a href="https://github.com/Iyankz/Firewall-MikroTik">Firewall-MikroTik</a></li>
-      <li><a href="https://github.com/Iyankz/RPZ-Kominfo">RPZ-Kominfo</a></li>
-      <li><a href="https://github.com/Iyankz/Trust-NG">Trust-NG</a></li>
-    </ul>
-  </div>
-
-  <div class="block">
-    <h4>ISP Services & Utilities</h4>
-    <ul>
-      <li><a href="https://github.com/Iyankz/Speedtest-Server-Ookla">Speedtest Server Ookla</a></li>
-      <li><a href="https://github.com/Iyankz/lookingglass">Looking Glass</a></li>
-      <li><a href="https://github.com/Iyankz/botlinkmaster">botlinkmaster</a></li>
-      <li><a href="https://github.com/Iyankz/Tutorial">Tutorial</a></li>
-    </ul>
-  </div>
-</section>
-
-<section class="journey">
-  <h3>My Journey</h3>
-  <p>
-    Started in 2017 as a Fiber Technician (Layer 1), once mocked as
-    <i>“tukang narik kabel”</i>.
-    <br><br>
-    Instead of quitting, I upgraded my skills — routing, monitoring,
-    security, automation, and operations.
-    <br><br>
-    Today, I manage 3 ISPs and consult nationwide.
-  </p>
-  <strong>NEVER SURRENDER.</strong>
-</section>
-
-<section class="help">
-  <h3>How I Can Help</h3>
-  <ul>
-    <li>Design & scale ISP infrastructure</li>
-    <li>Build NOC & monitoring systems</li>
-    <li>Network & security audits</li>
-    <li>Automation & best practices</li>
-    <li>Mentoring engineers from Layer 1</li>
-  </ul>
 </section>
 
 <footer>
   <p>
-  📧 <a href="mailto:iyankz.mekanik98@gmail.com">iyankz.mekanik98@gmail.com</a> ·
-  💬 <a href="https://t.me/iyankz23" target="_blank" rel="noopener noreferrer">Telegram</a> ·
-  💼 <a href="https://linkedin.com/in/yayang-ardiansyah" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
-  🐙 <a href="https://github.com/Iyankz" target="_blank" rel="noopener noreferrer">GitHub</a>
+    📧 <a href="mailto:iyankz.mekanik98@gmail.com">iyankz.mekanik98@gmail.com</a> ·
+    💬 <a href="https://t.me/iyankz23" target="_blank" rel="noopener">Telegram</a> ·
+    💼 <a href="https://linkedin.com/in/yayang-ardiansyah" target="_blank" rel="noopener">LinkedIn</a> ·
+    🐙 <a href="https://github.com/Iyankz" target="_blank" rel="noopener">GitHub</a>
   </p>
   <p class="motto">🔥 NEVER SURRENDER</p>
 </footer>
 
+<script src="assets/architecture.js"></script>
 </body>
 </html>
