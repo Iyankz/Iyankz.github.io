@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yayang Ardiansyah | ISP Systems Builder</title>
 
   <!-- 🔐 Security Headers / CSP -->
@@ -11,8 +11,8 @@
         default-src 'self';
         style-src 'self';
         script-src 'self' https://plausible.io;
-        img-src 'self' data:;
         connect-src 'self' https://plausible.io;
+        img-src 'self' data:;
         frame-ancestors 'none';
         base-uri 'self';
         form-action 'none';
@@ -24,9 +24,8 @@
         content="geolocation=(), camera=(), microphone=()">
 
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/architecture.css">
 
-  <!-- 📊 Privacy-Friendly Analytics -->
+  <!-- 📊 Privacy-friendly analytics -->
   <script defer data-domain="iyankz.github.io"
           src="https://plausible.io/js/script.js"></script>
 </head>
@@ -36,7 +35,9 @@
 <header class="hero">
   <h1>Yayang Ardiansyah <span>(Iyankz)</span></h1>
   <h2>Operations Manager · Network Architect · ISP Systems Builder</h2>
-  <p class="tagline">Designing and operating real-world ISP infrastructure</p>
+  <p class="tagline">
+    Building and operating real-world ISP infrastructure.
+  </p>
 </header>
 
 <section class="summary">
@@ -45,59 +46,81 @@
     <li>Managing <b>3 ISPs in Sukabumi</b></li>
     <li>ISP Consultant across Indonesia</li>
     <li>8+ years in ISP industry (Layer 1 → Management)</li>
-    <li>Builder of production-grade ISP operational systems</li>
+    <li>Focus: Stability, Automation, Security, Compliance</li>
   </ul>
 </section>
 
-<!-- 📐 INTERACTIVE ARCHITECTURE -->
-<section class="architecture">
-  <h3>ISP Architecture (Interactive)</h3>
-  <p class="hint">Hover or click each layer to explore</p>
+<section class="repos">
+  <h3>📦 Repository Directory</h3>
+  <p class="hint">
+    All repositories below are built for real ISP & NOC environments.
+  </p>
 
-  <div class="arch-stack">
-    <div class="layer" data-title="Users & Customers"
-         data-desc="End users accessing ISP services">
-      Users / Customers
-    </div>
-
-    <div class="layer" data-title="Network Devices"
-         data-desc="Routers, OLT, and switches">
-      MikroTik · OLT · Switch
-    </div>
-
-    <div class="layer clickable"
-         data-title="ISP Services"
-         data-desc="Customer-facing ISP services"
-         data-link="https://github.com/Iyankz">
-      GenieACS · Speedtest · Looking Glass
-    </div>
-
-    <div class="layer clickable"
-         data-title="Monitoring & NOC"
-         data-desc="Monitoring, alerting, and visibility"
-         data-link="https://github.com/Iyankz/CheckMK">
-      CheckMK · Smokeping · Pandora-FMS
-    </div>
-
-    <div class="layer clickable"
-         data-title="Security & Compliance"
-         data-desc="Firewall and DNS-based protection"
-         data-link="https://github.com/Iyankz/Firewall-MikroTik">
-      Firewall · RPZ · Trust-NG
-    </div>
-
-    <div class="layer highlight clickable"
-         data-title="Logging & SIEM (Core)"
-         data-desc="Centralized logging and incident analysis"
-         data-link="https://github.com/Iyankz/LeuitLog">
-      LeuitLog (SIEM)
-    </div>
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/LeuitLog" target="_blank">LeuitLog</a></h4>
+    <p>Lightweight SIEM & syslog recorder for ISP and NOC environments.</p>
   </div>
 
-  <div id="arch-info" class="arch-info">
-    <strong>Hover a layer</strong>
-    <p>Details will appear here.</p>
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/CheckMK" target="_blank">CheckMK</a></h4>
+    <p>Auto-installation and setup for infrastructure & service monitoring.</p>
   </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/Smokeping" target="_blank">Smokeping</a></h4>
+    <p>Latency, jitter, and packet loss monitoring for ISP networks.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/Pandora-FMS" target="_blank">Pandora-FMS</a></h4>
+    <p>Centralized monitoring platform deployment for NOC.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/GenieACS" target="_blank">GenieACS</a></h4>
+    <p>Auto-install TR-069 ACS for CPE management.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/Netbox-Community" target="_blank">Netbox-Community</a></h4>
+    <p>Network documentation and IPAM deployment.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/Oxidized" target="_blank">Oxidized</a></h4>
+    <p>Network device configuration backup & versioning.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/Firewall-MikroTik" target="_blank">Firewall-MikroTik</a></h4>
+    <p>RouterOS firewall hardening rules and best practices.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/RPZ-Kominfo" target="_blank">RPZ-Kominfo</a></h4>
+    <p>DNS RPZ automation for Indonesian ISP regulatory compliance.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/Speedtest-Server-Ookla" target="_blank">Speedtest Server Ookla</a></h4>
+    <p>Deployment guide for Ookla Speedtest server.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/lookingglass" target="_blank">Looking Glass</a></h4>
+    <p>ISP looking glass for public network diagnostics.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/botlinkmaster" target="_blank">botlinkmaster</a></h4>
+    <p>Automation bot and workflow helper.</p>
+  </div>
+
+  <div class="repo">
+    <h4><a href="https://github.com/Iyankz/Tutorial" target="_blank">Tutorial</a></h4>
+    <p>Networking & sysadmin documentation and guides.</p>
+  </div>
+
 </section>
 
 <footer>
@@ -110,6 +133,5 @@
   <p class="motto">🔥 NEVER SURRENDER</p>
 </footer>
 
-<script src="assets/architecture.js"></script>
 </body>
 </html>
