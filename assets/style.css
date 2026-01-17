@@ -6,14 +6,8 @@ body {
   line-height: 1.6;
 }
 
-a {
-  color: #58a6ff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+a { color: #58a6ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 .hero {
   text-align: center;
@@ -21,18 +15,23 @@ a:hover {
   background: linear-gradient(180deg, #0d1117, #161b22);
 }
 
-.hero h1 span {
-  color: #58a6ff;
+.hero h1 span { color: #58a6ff; }
+.hero h2 { font-weight: 400; color: #8b949e; }
+.tagline { font-style: italic; color: #8b949e; }
+
+.repo-index {
+  max-width: 900px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+  text-align: center;
 }
 
-.hero h2 {
-  font-weight: 400;
-  color: #8b949e;
-}
-
-.tagline {
-  font-style: italic;
-  color: #8b949e;
+.repo-index p {
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
 }
 
 section {
@@ -44,21 +43,6 @@ section {
 h3 {
   border-bottom: 2px solid #30363d;
   padding-bottom: 6px;
-}
-
-.hint {
-  color: #8b949e;
-  font-size: 0.9rem;
-}
-
-.repo {
-  margin: 18px 0;
-  padding-left: 10px;
-  border-left: 3px solid #30363d;
-}
-
-.repo h4 {
-  margin-bottom: 4px;
 }
 
 footer {
