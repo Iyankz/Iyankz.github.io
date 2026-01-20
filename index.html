@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Iyankz | ISP Systems Builder</title>
 
-  <meta name="description" content="Yayang Ardiansyah (Iyankz) – ISP Systems Builder. From field technician to operations manager, building real-world ISP operational platforms."/>
+  <meta name="description" content="Yayang Ardiansyah (Iyankz) – ISP Systems Builder. Building real-world ISP operational systems: GETOLS, LeuitLog, PingTD, botlinkmaster."/>
   <meta name="author" content="Yayang Ardiansyah (Iyankz)"/>
 
   <style>
@@ -37,79 +37,95 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 80px 24px;
     }
 
     header {
-      margin-bottom: 70px;
+      margin-bottom: 80px;
     }
 
     header h1 {
-      font-size: clamp(2.2rem, 5vw, 3rem);
+      font-size: clamp(2.4rem, 5vw, 3.2rem);
       font-weight: 800;
       margin-bottom: 12px;
     }
 
     header h2 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 500;
       color: var(--muted);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     header p {
+      max-width: 760px;
       font-size: 1.05rem;
       color: #d1d5db;
-      max-width: 720px;
     }
 
     .tagline {
-      margin-top: 22px;
+      margin-top: 24px;
       font-weight: 700;
       letter-spacing: 0.05em;
       color: var(--accent);
     }
 
     section {
-      margin-bottom: 70px;
+      margin-bottom: 80px;
     }
 
     section h3 {
-      font-size: 1.6rem;
+      font-size: 1.9rem;
       margin-bottom: 20px;
     }
 
     section p {
+      max-width: 860px;
       color: #d1d5db;
-      margin-bottom: 14px;
     }
 
-    .timeline {
-      border-left: 2px solid var(--border);
-      padding-left: 24px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
+      margin-top: 36px;
     }
 
-    .timeline-item {
-      margin-bottom: 30px;
+    .card {
+      background: linear-gradient(180deg, var(--bg-soft), #0d1422);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
-    .timeline-item span {
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 45px rgba(0,0,0,.45);
+    }
+
+    .card span {
       font-size: 0.85rem;
-      color: var(--accent);
       font-weight: 600;
+      color: var(--accent);
+    }
+
+    .card h4 {
+      margin: 10px 0 14px;
+      font-size: 1.25rem;
     }
 
     .philosophy {
       background: linear-gradient(180deg, var(--bg-soft), #0d1422);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 36px;
+      border-radius: 18px;
+      padding: 40px;
     }
 
     .philosophy ul {
-      margin-top: 16px;
+      margin-top: 20px;
       padding-left: 18px;
     }
 
@@ -120,14 +136,18 @@
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 40px 0 10px;
+      padding: 40px 24px;
       text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
     }
 
+    .links {
+      margin-top: 16px;
+    }
+
     .links a {
-      margin: 0 10px;
+      margin: 0 12px;
       font-weight: 500;
     }
   </style>
@@ -139,80 +159,81 @@
 
   <!-- HERO -->
   <header>
-    <h1>Yayang Ardiansyah (Iyankz)</h1>
+    <h1>Yayang Ardiansyah <br/>(Iyankz)</h1>
     <h2>Operations Manager · Network Architect · ISP Systems Builder</h2>
     <p>
       I build, operate, and scale <strong>real-world ISP infrastructure</strong>.
-      My work is shaped by hands-on field experience, operational responsibility,
-      and a strong belief that systems must be stable, auditable, and sovereign.
+      My focus is on operational control, automation, security, and observability —
+      systems that actually work in production.
     </p>
     <div class="tagline">🔥 NEVER SURRENDER</div>
   </header>
 
-  <!-- BACKGROUND -->
+  <!-- WHAT I DO -->
   <section>
-    <h3>🎓 Background</h3>
+    <h3>🧠 What I Do</h3>
     <p>
-      My journey in the ISP industry did not begin in a data center or management office,
-      but in the field — pulling cables, installing devices, and fixing real network problems.
-    </p>
-    <p>
-      I grew through every operational layer: from physical infrastructure (Layer 1),
-      to routing, switching, monitoring, and eventually operational decision-making.
-      This background shapes how I design systems today — practical, realistic, and grounded.
-    </p>
-  </section>
-
-  <!-- CAREER -->
-  <section>
-    <h3>🛠️ Career Journey</h3>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <span>Early Career</span>
-        <p>
-          Started as a field technician, handling cabling, installations,
-          and on-site troubleshooting for ISP infrastructure.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <span>Growth Phase</span>
-        <p>
-          Transitioned into network engineering roles,
-          working with routing, switching, OLT, monitoring systems,
-          and daily NOC operations.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <span>Today</span>
-        <p>
-          Managing and operating multiple ISPs in Sukabumi,
-          while acting as a consultant and system builder —
-          designing operational platforms, automation, and security controls.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section>
-    <h3>🏗️ What I Build</h3>
-    <p>
-      I build operational systems to solve problems I personally experienced in the field:
-      repetitive tasks, human error, lack of visibility, and unsafe direct device access.
-    </p>
-    <p>
-      My tools focus on operational gateways, monitoring, logging,
-      and automation — designed to support NOC teams and engineers
-      working in real production environments.
+      I manage and operate multiple ISPs while designing systems
+      to solve real operational problems:
+      repetitive tasks, human error, unsafe access, and lack of visibility.
     </p>
     <p>
       All systems are designed with one principle:
       <strong>engineers should work through systems, not directly on devices</strong>.
     </p>
+  </section>
+
+  <!-- TOOLS -->
+  <section>
+    <h3>🧱 Systems I Build</h3>
+    <p>
+      These tools are built from real operational experience
+      and form a unified ISP operational platform.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <span>Operational Gateway</span>
+        <h4>GETOLS</h4>
+        <p>
+          Gateway for Extended OLT Services.
+          A secure control plane for multi-vendor OLT & ONU operations.
+        </p>
+        <p><a href="https://github.com/Iyankz/Getols">View Repository →</a></p>
+      </div>
+
+      <div class="card">
+        <span>SIEM & Logging</span>
+        <h4>LeuitLog</h4>
+        <p>
+          Lightweight SIEM & syslog recorder inspired by
+          <em>Leuit</em> — logs as operational assets.
+        </p>
+        <p><a href="https://github.com/Iyankz/LeuitLog">View Repository →</a></p>
+      </div>
+
+      <div class="card">
+        <span>Network Monitoring</span>
+        <h4>PingTD</h4>
+        <p>
+          Ping, traceroute, and DNS monitoring for
+          daily NOC operations and SLA validation.
+        </p>
+        <p><a href="https://github.com/Iyankz/PingTD">View Repository →</a></p>
+      </div>
+
+      <div class="card">
+        <span>Telegram Bot</span>
+        <h4>botlinkmaster</h4>
+        <p>
+          Telegram bot for monitoring routers & switches,
+          including optical power (Tx/Rx).
+        </p>
+        <p><a href="https://github.com/Iyankz/botlinkmaster">View Repository →</a></p>
+      </div>
+
+    </div>
   </section>
 
   <!-- PHILOSOPHY -->
@@ -221,16 +242,18 @@
     <ul>
       <li>Consistency beats brilliance</li>
       <li>Systems must work quietly in the background</li>
+      <li>Engineers should focus on decisions, not repetition</li>
       <li>Logs and data are operational assets</li>
-      <li>Security and auditability are not optional</li>
-      <li>Data sovereignty should stay on-premise</li>
+      <li>Security, auditability, and sovereignty are mandatory</li>
     </ul>
   </section>
 
   <!-- CONTACT -->
   <section>
     <h3>📬 Contact</h3>
-    <p>Open for collaboration, consultation, and system design discussions.</p>
+    <p>
+      Open for collaboration, consultation, and system design discussions.
+    </p>
     <div class="links">
       <a href="mailto:iyankz.mekanik98@gmail.com">Email</a>
       <a href="https://t.me/iyankz23">Telegram</a>
@@ -242,7 +265,7 @@
 </div>
 
 <footer>
-  © 2026 Yayang Ardiansyah (Iyankz) · Built from the field · NEVER SURRENDER
+  © 2026 Yayang Ardiansyah (Iyankz) · Built from real operations · NEVER SURRENDER
 </footer>
 
 </body>
