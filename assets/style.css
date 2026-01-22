@@ -61,3 +61,41 @@ footer {
   color: #8b949e;
   font-size: 0.95rem;
 }
+/* ---------- MORE REPOSITORY CARD ---------- */
+
+.project-card-more {
+  background: radial-gradient(
+      ellipse at top,
+      rgba(16, 185, 129, 0.08),
+      transparent 60%
+    ),
+    var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.project-card-more:hover {
+  background: radial-gradient(
+      ellipse at top,
+      rgba(16, 185, 129, 0.12),
+      transparent 65%
+    ),
+    var(--bg-card-hover);
+}
+
+.project-card-more .project-tag {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent);
+}
+
+.project-card-more h4 {
+  font-size: 1.4rem;
+}
+
+.project-card-more p {
+  color: var(--text-secondary);
+}
+
+/* Ensure grid alignment */
+#more-repos .projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
