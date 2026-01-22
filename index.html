@@ -67,6 +67,48 @@
       overflow-x: hidden;
     }
 
+    /* Loading Screen */
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-content {
+      text-align: center;
+    }
+
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    .loader-text {
+      margin-top: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
     /* Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
@@ -121,6 +163,7 @@
     nav .nav-links {
       display: flex;
       gap: 32px;
+      align-items: center;
     }
 
     nav .nav-links a {
@@ -132,6 +175,36 @@
 
     nav .nav-links a:hover {
       color: var(--accent);
+    }
+
+    /* Language Toggle */
+    .lang-toggle {
+      display: flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .lang-toggle button {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .lang-toggle button.active {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .lang-toggle button:hover:not(.active) {
+      color: var(--text-primary);
     }
 
     a {
@@ -189,6 +262,29 @@
       z-index: 1;
     }
 
+    /* Avatar */
+    .hero-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      margin-bottom: 32px;
+      background: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      animation: fadeInUp 0.8s ease forwards;
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
+      overflow: hidden;
+    }
+
+    .hero-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -201,7 +297,8 @@
       font-size: 0.8rem;
       color: var(--accent);
       margin-bottom: 32px;
-      animation: fadeInUp 0.8s ease forwards;
+      animation: fadeInUp 0.8s ease 0.1s forwards;
+      opacity: 0;
     }
 
     .hero-badge .dot {
@@ -222,7 +319,7 @@
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 24px;
-      animation: fadeInUp 0.8s ease 0.1s forwards;
+      animation: fadeInUp 0.8s ease 0.2s forwards;
       opacity: 0;
     }
 
@@ -239,7 +336,7 @@
       font-weight: 400;
       color: var(--text-secondary);
       margin-bottom: 32px;
-      animation: fadeInUp 0.8s ease 0.2s forwards;
+      animation: fadeInUp 0.8s ease 0.3s forwards;
       opacity: 0;
     }
 
@@ -253,7 +350,7 @@
       font-size: 1.15rem;
       color: var(--text-secondary);
       margin-bottom: 40px;
-      animation: fadeInUp 0.8s ease 0.3s forwards;
+      animation: fadeInUp 0.8s ease 0.4s forwards;
       opacity: 0;
     }
 
@@ -261,7 +358,7 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      animation: fadeInUp 0.8s ease 0.4s forwards;
+      animation: fadeInUp 0.8s ease 0.5s forwards;
       opacity: 0;
     }
 
@@ -303,7 +400,7 @@
     .hero-motto {
       margin-top: 60px;
       font-family: 'JetBrains Mono', monospace;
-      animation: fadeInUp 0.8s ease 0.5s forwards;
+      animation: fadeInUp 0.8s ease 0.6s forwards;
       opacity: 0;
     }
 
@@ -513,6 +610,15 @@
       transform: translateX(4px);
     }
 
+    /* More Repos Card */
+    .project-card-more {
+      background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.08), transparent 60%), var(--bg-card);
+    }
+
+    .project-card-more:hover {
+      background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.12), transparent 65%), var(--bg-card-hover);
+    }
+
     /* Philosophy */
     .philosophy-section {
       background: var(--bg-primary);
@@ -649,6 +755,45 @@
       letter-spacing: 0.1em;
     }
 
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--gradient-accent);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+    }
+
+    .back-to-top svg {
+      width: 24px;
+      height: 24px;
+      color: #000;
+    }
+
     /* Animations on scroll */
     .fade-in {
       opacity: 0;
@@ -661,9 +806,22 @@
       transform: translateY(0);
     }
 
+    /* Language switcher for content */
+    [data-lang="id"] {
+      display: none;
+    }
+
+    html[lang="id"] [data-lang="en"] {
+      display: none;
+    }
+
+    html[lang="id"] [data-lang="id"] {
+      display: inline;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
-      nav .nav-links {
+      nav .nav-links a:not(.lang-toggle) {
         display: none;
       }
 
@@ -694,21 +852,44 @@
         max-width: 300px;
         justify-content: center;
       }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- Loading Screen -->
+<div class="loader" id="loader">
+  <div class="loader-content">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">./loading</div>
+  </div>
+</div>
+
 <!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
     <div class="logo">./iyankz</div>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#philosophy">Philosophy</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-lang="en">About</a>
+      <a href="#about" data-lang="id">Tentang</a>
+      <a href="#projects" data-lang="en">Projects</a>
+      <a href="#projects" data-lang="id">Proyek</a>
+      <a href="#philosophy" data-lang="en">Philosophy</a>
+      <a href="#philosophy" data-lang="id">Filosofi</a>
+      <a href="#contact" data-lang="en">Contact</a>
+      <a href="#contact" data-lang="id">Kontak</a>
+      <div class="lang-toggle">
+        <button id="lang-en" class="active">EN</button>
+        <button id="lang-id">ID</button>
+      </div>
     </div>
   </div>
 </nav>
@@ -717,9 +898,15 @@
 <section class="hero">
   <div class="grid-overlay"></div>
   <div class="hero-content">
+    <!-- Avatar -->
+    <div class="hero-avatar">
+      <img src="assets/avatar.jpg" alt="Yayang Ardiansyah">
+    </div>
+    
     <div class="hero-badge">
       <span class="dot"></span>
-      Available for collaboration
+      <span data-lang="en">Available for collaboration</span>
+      <span data-lang="id">Terbuka untuk kolaborasi</span>
     </div>
     <h1>
       <span class="name">Yayang Ardiansyah</span>
@@ -727,16 +914,27 @@
     </h1>
     <h2>Operations Manager <span>·</span> Network Architect <span>·</span> ISP Systems Builder</h2>
     <p class="hero-desc">
-      I build, operate, and scale <strong>real-world ISP infrastructure</strong>.
-      My focus is on operational control, automation, security, and observability —
-      systems that actually work in production.
+      <span data-lang="en">
+        I build, operate, and scale <strong>real-world ISP infrastructure</strong>.
+        My focus is on operational control, automation, security, and observability —
+        systems that actually work in production.
+      </span>
+      <span data-lang="id">
+        Saya membangun, mengoperasikan, dan mengembangkan <strong>infrastruktur ISP nyata</strong>.
+        Fokus saya adalah kontrol operasional, automasi, keamanan, dan observabilitas —
+        sistem yang benar-benar berjalan di produksi.
+      </span>
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">
-        View Projects
+        <span data-lang="en">View Projects</span>
+        <span data-lang="id">Lihat Proyek</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
       </a>
-      <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      <a href="#contact" class="btn btn-secondary">
+        <span data-lang="en">Get in Touch</span>
+        <span data-lang="id">Hubungi Saya</span>
+      </a>
     </div>
     <div class="hero-motto">
       <span>🔥 NEVER SURRENDER</span>
@@ -749,19 +947,31 @@
   <div class="stats-grid">
     <div class="stat-item fade-in">
       <div class="stat-number">10+</div>
-      <div class="stat-label">Years Experience</div>
+      <div class="stat-label">
+        <span data-lang="en">Years Experience</span>
+        <span data-lang="id">Tahun Pengalaman</span>
+      </div>
     </div>
     <div class="stat-item fade-in">
       <div class="stat-number">5+</div>
-      <div class="stat-label">ISPs Managed</div>
+      <div class="stat-label">
+        <span data-lang="en">ISPs Managed</span>
+        <span data-lang="id">ISP Dikelola</span>
+      </div>
     </div>
     <div class="stat-item fade-in">
       <div class="stat-number">4</div>
-      <div class="stat-label">Open Source Tools</div>
+      <div class="stat-label">
+        <span data-lang="en">Open Source Tools</span>
+        <span data-lang="id">Tool Open Source</span>
+      </div>
     </div>
     <div class="stat-item fade-in">
       <div class="stat-number">24/7</div>
-      <div class="stat-label">NOC Operations</div>
+      <div class="stat-label">
+        <span data-lang="en">NOC Operations</span>
+        <span data-lang="id">Operasi NOC</span>
+      </div>
     </div>
   </div>
 </div>
@@ -770,28 +980,55 @@
 <section id="about">
   <div class="section-header fade-in">
     <span class="section-label">// WHAT I DO</span>
-    <h2 class="section-title">Building Systems That Work</h2>
+    <h2 class="section-title">
+      <span data-lang="en">Building Systems That Work</span>
+      <span data-lang="id">Membangun Sistem yang Bekerja</span>
+    </h2>
     <p class="section-desc">
-      I manage and operate multiple ISPs while designing systems to solve real operational problems:
-      repetitive tasks, human error, unsafe access, and lack of visibility.
+      <span data-lang="en">
+        I manage and operate multiple ISPs while designing systems to solve real operational problems:
+        repetitive tasks, human error, unsafe access, and lack of visibility.
+      </span>
+      <span data-lang="id">
+        Saya mengelola dan mengoperasikan beberapa ISP sembari merancang sistem untuk menyelesaikan masalah operasional nyata:
+        tugas berulang, kesalahan manusia, akses tidak aman, dan kurangnya visibilitas.
+      </span>
     </p>
   </div>
 
   <div class="what-grid">
     <div class="what-card fade-in">
       <div class="what-icon">🛡️</div>
-      <h4>Operational Control</h4>
-      <p>Engineers work through systems, not directly on devices. Centralized, auditable, and secure operations.</p>
+      <h4>
+        <span data-lang="en">Operational Control</span>
+        <span data-lang="id">Kontrol Operasional</span>
+      </h4>
+      <p>
+        <span data-lang="en">Engineers work through systems, not directly on devices. Centralized, auditable, and secure operations.</span>
+        <span data-lang="id">Engineer bekerja melalui sistem, bukan langsung ke perangkat. Operasi terpusat, dapat diaudit, dan aman.</span>
+      </p>
     </div>
     <div class="what-card fade-in">
       <div class="what-icon">⚡</div>
-      <h4>Automation</h4>
-      <p>Eliminating repetitive tasks and human error through intelligent automation and workflows.</p>
+      <h4>
+        <span data-lang="en">Automation</span>
+        <span data-lang="id">Automasi</span>
+      </h4>
+      <p>
+        <span data-lang="en">Eliminating repetitive tasks and human error through intelligent automation and workflows.</span>
+        <span data-lang="id">Menghilangkan tugas berulang dan kesalahan manusia melalui automasi cerdas dan workflow.</span>
+      </p>
     </div>
     <div class="what-card fade-in">
       <div class="what-icon">📊</div>
-      <h4>Observability</h4>
-      <p>Real-time monitoring, logging, and alerting. Complete visibility into network health and performance.</p>
+      <h4>
+        <span data-lang="en">Observability</span>
+        <span data-lang="id">Observabilitas</span>
+      </h4>
+      <p>
+        <span data-lang="en">Real-time monitoring, logging, and alerting. Complete visibility into network health and performance.</span>
+        <span data-lang="id">Monitoring real-time, logging, dan alerting. Visibilitas penuh terhadap kesehatan dan performa jaringan.</span>
+      </p>
     </div>
   </div>
 
@@ -811,9 +1048,13 @@
 <section id="projects">
   <div class="section-header fade-in">
     <span class="section-label">// SYSTEMS I BUILD</span>
-    <h2 class="section-title">Open Source Tools</h2>
+    <h2 class="section-title">
+      <span data-lang="en">Open Source Tools</span>
+      <span data-lang="id">Tool Open Source</span>
+    </h2>
     <p class="section-desc">
-      These tools are built from real operational experience and form a unified ISP operational platform.
+      <span data-lang="en">These tools are built from real operational experience and form a unified ISP operational platform.</span>
+      <span data-lang="id">Tool-tool ini dibangun dari pengalaman operasional nyata dan membentuk platform operasional ISP yang terpadu.</span>
     </p>
   </div>
 
@@ -821,7 +1062,10 @@
     <div class="project-card fade-in">
       <span class="project-tag">Operational Gateway</span>
       <h4>GETOLS</h4>
-      <p>Gateway for Extended OLT Services. A secure control plane for multi-vendor OLT & ONU operations.</p>
+      <p>
+        <span data-lang="en">Gateway for Extended OLT Services. A secure control plane for multi-vendor OLT & ONU operations.</span>
+        <span data-lang="id">Gateway for Extended OLT Services. Control plane yang aman untuk operasi OLT & ONU multi-vendor.</span>
+      </p>
       <a href="https://github.com/Iyankz/Getols" class="project-link" target="_blank">
         View Repository
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -831,7 +1075,10 @@
     <div class="project-card fade-in">
       <span class="project-tag">SIEM & Logging</span>
       <h4>LeuitLog</h4>
-      <p>Lightweight SIEM & syslog recorder inspired by <em>Leuit</em> — treating logs as operational assets.</p>
+      <p>
+        <span data-lang="en">Lightweight SIEM & syslog recorder inspired by <em>Leuit</em> — treating logs as operational assets.</span>
+        <span data-lang="id">SIEM & syslog recorder ringan terinspirasi dari <em>Leuit</em> — memperlakukan log sebagai aset operasional.</span>
+      </p>
       <a href="https://github.com/Iyankz/LeuitLog" class="project-link" target="_blank">
         View Repository
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -841,7 +1088,10 @@
     <div class="project-card fade-in">
       <span class="project-tag">Network Monitoring</span>
       <h4>PingTD</h4>
-      <p>Ping, traceroute, and DNS monitoring for daily NOC operations and SLA validation.</p>
+      <p>
+        <span data-lang="en">Ping, traceroute, and DNS monitoring for daily NOC operations and SLA validation.</span>
+        <span data-lang="id">Monitoring ping, traceroute, dan DNS untuk operasi NOC harian dan validasi SLA.</span>
+      </p>
       <a href="https://github.com/Iyankz/PingTD" class="project-link" target="_blank">
         View Repository
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -851,69 +1101,49 @@
     <div class="project-card fade-in">
       <span class="project-tag">Telegram Bot</span>
       <h4>botlinkmaster</h4>
-      <p>Telegram bot for monitoring routers & switches, including optical power (Tx/Rx) readings.</p>
+      <p>
+        <span data-lang="en">Telegram bot for monitoring routers & switches, including optical power (Tx/Rx) readings.</span>
+        <span data-lang="id">Bot Telegram untuk monitoring router & switch, termasuk pembacaan optical power (Tx/Rx).</span>
+      </p>
       <a href="https://github.com/Iyankz/botlinkmaster" class="project-link" target="_blank">
         View Repository
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
       </a>
     </div>
   </div>
-  <!-- More Repositories -->
+</section>
+
+<!-- More Repositories -->
 <section id="more-repos">
   <div class="section-header fade-in">
     <span class="section-label">// MORE REPOSITORIES</span>
-
     <h2 class="section-title">
       <span data-lang="en">More Repositories</span>
-      <span data-lang="id" style="display:none">Repositori Lainnya</span>
+      <span data-lang="id">Repositori Lainnya</span>
     </h2>
-
     <p class="section-desc">
-      <span data-lang="en">
-        Additional tools, experiments, and infrastructure labs built to support
-        real-world ISP operations.
-      </span>
-      <span data-lang="id" style="display:none">
-        Tool tambahan, eksperimen, dan lab infrastruktur yang dibangun untuk
-        mendukung operasional ISP nyata.
-      </span>
+      <span data-lang="en">Additional tools, experiments, and infrastructure labs built to support real-world ISP operations.</span>
+      <span data-lang="id">Tool tambahan, eksperimen, dan lab infrastruktur yang dibangun untuk mendukung operasional ISP nyata.</span>
     </p>
   </div>
 
   <div class="projects-grid fade-in">
-
-    <!-- Card: More Repos -->
     <div class="project-card project-card-more">
       <span class="project-tag">GitHub</span>
-
       <h4>
         <span data-lang="en">More Tools & Experiments</span>
-        <span data-lang="id" style="display:none">Tool & Eksperimen Lainnya</span>
+        <span data-lang="id">Tool & Eksperimen Lainnya</span>
       </h4>
-
       <p>
-        <span data-lang="en">
-          Collection of additional repositories including internal tools,
-          prototypes, PoC, and supporting utilities.
-        </span>
-        <span data-lang="id" style="display:none">
-          Kumpulan repositori lain berisi tool internal, prototype,
-          proof of concept, dan utilitas pendukung.
-        </span>
+        <span data-lang="en">Collection of additional repositories including internal tools, prototypes, PoC, and supporting utilities.</span>
+        <span data-lang="id">Kumpulan repositori lain berisi tool internal, prototype, proof of concept, dan utilitas pendukung.</span>
       </p>
-
-      <a href="https://github.com/Iyankz?tab=repositories"
-         class="project-link"
-         target="_blank">
+      <a href="https://github.com/Iyankz?tab=repositories" class="project-link" target="_blank">
         <span data-lang="en">View All Repositories</span>
-        <span data-lang="id" style="display:none">Lihat Semua Repositori</span>
-        <svg width="16" height="16" viewBox="0 0 24 24"
-             fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M7 17L17 7M17 7H7M17 7V17"/>
-        </svg>
+        <span data-lang="id">Lihat Semua Repositori</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
       </a>
     </div>
-
   </div>
 </section>
 
@@ -921,32 +1151,53 @@
 <section id="philosophy">
   <div class="philosophy-section fade-in">
     <span class="section-label">// WORK PHILOSOPHY</span>
-    <h2 class="section-title">Principles I Live By</h2>
+    <h2 class="section-title">
+      <span data-lang="en">Principles I Live By</span>
+      <span data-lang="id">Prinsip yang Saya Pegang</span>
+    </h2>
     
     <div class="philosophy-list">
       <div class="philosophy-item">
         <span class="check">✓</span>
-        <p><strong>Consistency beats brilliance</strong> — reliable systems over clever hacks</p>
+        <p>
+          <span data-lang="en"><strong>Consistency beats brilliance</strong> — reliable systems over clever hacks</span>
+          <span data-lang="id"><strong>Konsistensi mengalahkan kejeniusan</strong> — sistem andal lebih baik dari trik cerdas</span>
+        </p>
       </div>
       <div class="philosophy-item">
         <span class="check">✓</span>
-        <p><strong>Systems work quietly</strong> — good infrastructure is invisible</p>
+        <p>
+          <span data-lang="en"><strong>Systems work quietly</strong> — good infrastructure is invisible</span>
+          <span data-lang="id"><strong>Sistem bekerja tanpa suara</strong> — infrastruktur yang baik tidak terlihat</span>
+        </p>
       </div>
       <div class="philosophy-item">
         <span class="check">✓</span>
-        <p><strong>Decisions over repetition</strong> — engineers should think, not repeat</p>
+        <p>
+          <span data-lang="en"><strong>Decisions over repetition</strong> — engineers should think, not repeat</span>
+          <span data-lang="id"><strong>Keputusan di atas pengulangan</strong> — engineer harus berpikir, bukan mengulang</span>
+        </p>
       </div>
       <div class="philosophy-item">
         <span class="check">✓</span>
-        <p><strong>Logs are assets</strong> — data drives operational excellence</p>
+        <p>
+          <span data-lang="en"><strong>Logs are assets</strong> — data drives operational excellence</span>
+          <span data-lang="id"><strong>Log adalah aset</strong> — data mendorong keunggulan operasional</span>
+        </p>
       </div>
       <div class="philosophy-item">
         <span class="check">✓</span>
-        <p><strong>Security is mandatory</strong> — not optional, not negotiable</p>
+        <p>
+          <span data-lang="en"><strong>Security is mandatory</strong> — not optional, not negotiable</span>
+          <span data-lang="id"><strong>Keamanan itu wajib</strong> — tidak opsional, tidak bisa ditawar</span>
+        </p>
       </div>
       <div class="philosophy-item">
         <span class="check">✓</span>
-        <p><strong>Sovereignty matters</strong> — own your infrastructure, own your data</p>
+        <p>
+          <span data-lang="en"><strong>Sovereignty matters</strong> — own your infrastructure, own your data</span>
+          <span data-lang="id"><strong>Kedaulatan itu penting</strong> — miliki infrastruktur Anda, miliki data Anda</span>
+        </p>
       </div>
     </div>
   </div>
@@ -956,9 +1207,13 @@
 <section id="contact" class="contact-section">
   <div class="section-header fade-in">
     <span class="section-label">// GET IN TOUCH</span>
-    <h2 class="section-title">Let's Build Together</h2>
+    <h2 class="section-title">
+      <span data-lang="en">Let's Build Together</span>
+      <span data-lang="id">Mari Membangun Bersama</span>
+    </h2>
     <p class="section-desc" style="margin: 0 auto;">
-      Open for collaboration, consultation, and system design discussions.
+      <span data-lang="en">Open for collaboration, consultation, and system design discussions.</span>
+      <span data-lang="id">Terbuka untuk kolaborasi, konsultasi, dan diskusi desain sistem.</span>
     </p>
   </div>
 
@@ -988,21 +1243,40 @@
   <p class="motto">NEVER SURRENDER</p>
 </footer>
 
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <path d="M18 15L12 9L6 15"/>
+  </svg>
+</button>
+
 <script>
+  // Loading Screen
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hidden');
+    }, 800);
+  });
+
   // Navbar show on scroll
   const navbar = document.getElementById('navbar');
-  let lastScroll = 0;
+  const backToTop = document.getElementById('backToTop');
 
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 100) {
       navbar.classList.add('visible');
+      backToTop.classList.add('visible');
     } else {
       navbar.classList.remove('visible');
+      backToTop.classList.remove('visible');
     }
-    
-    lastScroll = currentScroll;
+  });
+
+  // Back to Top
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   // Fade in on scroll
@@ -1020,6 +1294,33 @@
   });
 
   fadeElements.forEach(el => observer.observe(el));
+
+  // Language Toggle
+  const langEn = document.getElementById('lang-en');
+  const langId = document.getElementById('lang-id');
+  const html = document.documentElement;
+
+  // Check saved language preference
+  const savedLang = localStorage.getItem('lang') || 'en';
+  if (savedLang === 'id') {
+    html.setAttribute('lang', 'id');
+    langId.classList.add('active');
+    langEn.classList.remove('active');
+  }
+
+  langEn.addEventListener('click', () => {
+    html.setAttribute('lang', 'en');
+    langEn.classList.add('active');
+    langId.classList.remove('active');
+    localStorage.setItem('lang', 'en');
+  });
+
+  langId.addEventListener('click', () => {
+    html.setAttribute('lang', 'id');
+    langId.classList.add('active');
+    langEn.classList.remove('active');
+    localStorage.setItem('lang', 'id');
+  });
 </script>
 
 </body>
