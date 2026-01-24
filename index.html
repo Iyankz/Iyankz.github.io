@@ -886,10 +886,7 @@
       <a href="#philosophy" data-lang="id">Filosofi</a>
       <a href="#contact" data-lang="en">Contact</a>
       <a href="#contact" data-lang="id">Kontak</a>
-      <div class="lang-toggle">
-        <button id="lang-en" class="active">EN</button>
-        <button id="lang-id">ID</button>
-      </div>
+      
     </div>
   </div>
 </nav>
@@ -908,8 +905,26 @@
       <span data-lang="en">Available for collaboration</span>
       <span data-lang="id">Terbuka untuk kolaborasi</span>
     </div>
-    <h1>Linux, Network &amp; Open Source Enthusiast</h1>
-<p>Building network monitoring &amp; automation tools 🐧</p>
+    
+
+<h1 class="lang lang-id">Linux, Network &amp; Open Source Enthusiast</h1>
+
+<div class="hero-credential">
+  <strong>ISP Industry Experience since 2017</strong>
+  <div class="hero-credential-tags">
+    Network Operations • Monitoring • Infrastructure Automation • Cybersecurity
+  </div>
+</div>
+
+<h1 class="lang lang-en" style="display:none;">Linux, Network &amp; Open Source Enthusiast</h1>
+
+<p class="lang lang-id">
+  Membangun sistem monitoring jaringan &amp; automasi berbasis open source 🐧
+</p>
+
+<p class="lang lang-en" style="display:none;">
+  Building network monitoring &amp; automation tools 🐧
+</p>
 
     </div>
     <div class="what-card fade-in">
@@ -1237,6 +1252,33 @@
     localStorage.setItem('lang', 'id');
   });
 </script>
+
+
+
+<section id="experience">
+  <h2 class="lang lang-id">Pengalaman</h2>
+  <h2 class="lang lang-en" style="display:none;">Experience</h2>
+
+  <p class="lang lang-id">
+    Berpengalaman di industri ISP sejak <strong>2017</strong>, dengan fokus pada
+    network operations, monitoring, infrastructure automation, serta aspek
+    keamanan siber pada sistem dan jaringan.
+  </p>
+
+  <p class="lang lang-en" style="display:none;">
+    Experienced in the ISP industry since <strong>2017</strong>, with a focus on
+    network operations, monitoring, infrastructure automation, and cybersecurity
+    aspects across systems and networks.
+  </p>
+</section>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+}
+</script>
+
 
 </body>
 </html>
